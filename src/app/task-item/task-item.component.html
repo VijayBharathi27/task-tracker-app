@@ -1,4 +1,12 @@
 <div class="task">
-  <h3>{{ task.text }}</h3>
+  <div [ngStyle]="{ display: 'flex', 'justify-content': 'space-between' }">
+    <h3>{{ task.text }}</h3>
+    <button
+      (click)="onDelete(task)"
+      [ngStyle]="{ color: 'red', cursor: 'pointer' }"
+    >
+      X
+    </button>
+  </div>
   <h3>{{ task.day }}</h3>
 </div>

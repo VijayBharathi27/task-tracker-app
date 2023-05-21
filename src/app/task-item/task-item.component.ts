@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TaskType } from '../TaskType';
 
 @Component({
@@ -8,4 +8,8 @@ import { TaskType } from '../TaskType';
 })
 export class TaskItemComponent {
   @Input() task: TaskType;
+  @Output() onDeleteTask: EventEmitter<TaskType> = new EventEmitter();
+  onDelete(task) {
+    this.onDeleteTask.emit(task);
+  }
 }
